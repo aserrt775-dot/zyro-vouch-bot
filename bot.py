@@ -291,6 +291,8 @@ async def vouch(
     # SEND EMBED
     # =====================================================
 
+    await interaction.response.defer(ephemeral=True)
+
     try:
 
         await channel.send(
@@ -300,7 +302,7 @@ async def vouch(
 
     except discord.Forbidden:
 
-        await interaction.response.send_message(
+        await interaction.followup.send(
             "❌ I don't have permission to send messages here.",
             ephemeral=True
         )
@@ -309,7 +311,7 @@ async def vouch(
 
     except discord.HTTPException:
 
-        await interaction.response.send_message(
+        await interaction.followup.send(
             "❌ Discord rejected the message. Please try again.",
             ephemeral=True
         )
@@ -321,7 +323,7 @@ async def vouch(
     # SUCCESS
     # =====================================================
 
-    await interaction.response.send_message(
+    await interaction.followup.send(
         "✅ Your vouch has been successfully recorded!",
         ephemeral=True
     )
