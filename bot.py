@@ -276,7 +276,7 @@ async def vouch(
 
     embed.add_field(
         name="Rating",
-        value=f"{stars}\n{rating} / 5",
+        value=stars,
         inline=True
     )
 
