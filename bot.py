@@ -254,7 +254,7 @@ async def vouch(
     # =====================================================
 
     embed = discord.Embed(
-        title="⭐ NEW VOUCH ⭐",
+        title="NEW VOUCH",
         description=f"{stars}\n\n**{avis}**",
         color=EMBED_COLOR
     )
@@ -275,7 +275,7 @@ async def vouch(
     )
 
     embed.add_field(
-        name="⭐ **Rating**",
+        name="Rating",
         value=f"{stars}\n`{rating} / 5`",
         inline=True
     )
