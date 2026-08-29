@@ -271,7 +271,7 @@ async def vouch(
 
     embed.add_field(
         name="Vouch",
-        value=f"@{interaction.user.name}",
+        value=avis,
         inline=True
     )
 
@@ -283,7 +283,7 @@ async def vouch(
 
     embed.add_field(
         name="Vouched by",
-        value=f"@{bot.user.name}",
+        value=f"@{interaction.user.name}",
         inline=True
     )
 
