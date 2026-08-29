@@ -255,7 +255,7 @@ async def vouch(
 
     embed = discord.Embed(
         title="NEW VOUCH",
-        description=f"{stars}\n\n**{avis}**",
+        description=f"{stars}\n\n{avis}",
         color=EMBED_COLOR
     )
 
@@ -269,25 +269,19 @@ async def vouch(
     )
 
     embed.add_field(
-        name="📦 **Product**",
-        value=f"```{produit}```",
+        name="Product",
+        value=produit,
         inline=True
     )
 
     embed.add_field(
-        name="Rating",
-        value=f"{stars}\n`{rating} / 5`",
-        inline=True
-    )
-
-    embed.add_field(
-        name="🔢 **Vouch №**",
-        value=f"`#{vouch_id:04d}`",
+        name="Vouch",
+        value=f"#{vouch_id:04d}",
         inline=True
     )
 
     embed.set_footer(
-        text=f"Thank you for your trust ❤️  •  Vouch #{vouch_id:04d}"
+        text=f"Thank you for your trust ❤️"
     )
 
 
