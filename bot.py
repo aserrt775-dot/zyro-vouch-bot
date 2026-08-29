@@ -283,7 +283,7 @@ async def vouch(
     embed.add_field(
         name="Avis",
         value=avis,
-        inline=False
+        inline=True
     )
 
     embed.set_footer(
