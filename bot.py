@@ -2,6 +2,7 @@ import os
 import sqlite3
 import discord
 
+from datetime import datetime
 from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -254,8 +255,8 @@ async def vouch(
     # =====================================================
 
     embed = discord.Embed(
-        title="NEW VOUCH",
-        description="\u200b",
+        title="New vouch created!",
+        description=stars,
         color=EMBED_COLOR
     )
 
@@ -269,25 +270,31 @@ async def vouch(
     )
 
     embed.add_field(
-        name="Product",
-        value=produit,
+        name="Vouch",
+        value=f"@{interaction.user.name}",
         inline=True
     )
 
     embed.add_field(
-        name="Rating",
-        value=stars,
+        name="Vouch Nº",
+        value=f"#{vouch_id:04d}",
         inline=True
     )
 
     embed.add_field(
-        name="Avis",
-        value=avis,
+        name="Vouched by",
+        value=f"@{bot.user.name}",
         inline=True
+    )
+
+    embed.add_field(
+        name="Vouched at",
+        value=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        inline=False
     )
 
     embed.set_footer(
-        text=f"Vouch #{vouch_id:04d}  •  Thank you for your trust ❤️"
+        text="Thank you for your trust ❤️"
     )
 
 
